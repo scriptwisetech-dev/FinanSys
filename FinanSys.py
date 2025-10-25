@@ -64,7 +64,7 @@ class Sidebar(QFrame):
             }
         """)
         
-        # Adicionando itens do menu
+       
         menu_items = [
             "🏠 Dashboard",
             "💰 Transações", 
@@ -80,7 +80,7 @@ class Sidebar(QFrame):
         
         layout.addWidget(self.nav_list)
         
-        # Botão de logout na parte inferior
+       
         logout_btn = QPushButton("🚪 Sair")
         logout_btn.setStyleSheet("""
             QPushButton {
@@ -110,7 +110,7 @@ class DashboardWidget(QWidget):
         layout.setContentsMargins(20, 20, 20, 20)
         layout.setSpacing(20)
 
-        # Título do Dashboard
+        
         title = QLabel("🏠 Dashboard")
         title.setStyleSheet("""
             QLabel {
@@ -122,31 +122,31 @@ class DashboardWidget(QWidget):
         """)
         layout.addWidget(title)
 
-        # Cards de estatísticas
+        
         stats_layout = QHBoxLayout()
         
-        # Card 1 - Saldo Total
+        # Saldo Total
         self.saldo_card = self.create_card("💰 Saldo Total", "R$ 15.450,00", "#27ae60")
         stats_layout.addWidget(self.saldo_card)
         
-        # Card 2 - Receitas do Mês
+        # Receitas do Mês
         self.receitas_card = self.create_card("📈 Receitas", "R$ 8.200,00", "#3498db")
         stats_layout.addWidget(self.receitas_card)
         
-        # Card 3 - Despesas do Mês
+        # Despesas do Mês
         self.despesas_card = self.create_card("📉 Despesas", "R$ 3.750,00", "#e74c3c")
         stats_layout.addWidget(self.despesas_card)
         
-        # Card 4 - Economia
+        # Economia
         self.economia_card = self.create_card("💎 Economia", "R$ 4.450,00", "#f39c12")
         stats_layout.addWidget(self.economia_card)
         
         layout.addLayout(stats_layout)
         
-        # Área de gráficos e tabelas
+       
         content_layout = QHBoxLayout()
         
-        # Gráfico simulado
+       
         self.grafico_area = QLabel("📊 Gráfico de Gastos\n\nAqui você pode colocar:\n• Gráficos de pizza\n• Gráficos de barras\n• Gráficos de linha\n• Qualquer widget de visualização")
         self.grafico_area.setStyleSheet("""
             QLabel {
@@ -162,7 +162,7 @@ class DashboardWidget(QWidget):
         self.grafico_area.setMinimumHeight(300)
         content_layout.addWidget(self.grafico_area, 2)
         
-        # Lista de transações recentes
+       
         self.transacoes_widget = QWidget()
         self.transacoes_widget.setStyleSheet("""
             QWidget {
@@ -185,7 +185,7 @@ class DashboardWidget(QWidget):
         """)
         transacoes_layout.addWidget(transacoes_title)
         
-        # Lista de transações
+        
         self.transacoes_list = QListWidget()
         self.transacoes_list.setStyleSheet("""
             QListWidget {
@@ -198,7 +198,7 @@ class DashboardWidget(QWidget):
             }
         """)
         
-        # Adicionando transações de exemplo
+        
         transacoes_exemplo = [
             "🍕 Uber Eats - R$ 45,00",
             "⛽ Posto Shell - R$ 120,00", 
@@ -329,10 +329,10 @@ class MainContentArea(QWidget):
     def setup_ui(self):
         
         
-        # Layout principal com StackedWidget para trocar páginas
+      
         self.stacked_widget = QStackedWidget()
         
-        # Página inicial
+        
         self.welcome_page = QLabel("Bem-vindo ao FinanSys!\n\nSelecione uma opção no menu lateral.")
         self.welcome_page.setStyleSheet("""
             QLabel {
@@ -354,7 +354,7 @@ class MainContentArea(QWidget):
         self.stacked_widget.addWidget(self.welcome_page)
         self.stacked_widget.addWidget(self.dashboard)
         
-        # Layout principal
+       
         layout = QVBoxLayout()
         layout.setContentsMargins(0, 0, 0, 0)
         layout.addWidget(self.stacked_widget)
@@ -434,29 +434,29 @@ class LoginWindow(QMainWindow):
         self.setFixedSize(1200, 700)
         self.setWindowTitle("FinanSys")
 
-        # Widget central
+      
         central_widget = QWidget()
         self.setCentralWidget(central_widget)
         
-        # Layout principal horizontal
+        
         main_layout = QHBoxLayout()
         main_layout.setContentsMargins(0, 0, 0, 0)
         main_layout.setSpacing(0)
         
-        # Criando a sidebar
+        
         self.sidebar = Sidebar(self)
         self.sidebar.nav_list.itemClicked.connect(self.on_nav_item_clicked)
         
-        # Criando a área de conteúdo principal
+      
         self.main_content = MainContentArea(self)
         
-        # Adicionando à layout principal
+       
         main_layout.addWidget(self.sidebar)
         main_layout.addWidget(self.main_content)
         
         central_widget.setLayout(main_layout)
         
-        # Botões da barra de título (sobrepostos)
+       
         self.btn_mini = QPushButton(self)
         self.btn_mini.setGeometry(20, 8, 23, 23)
         self.btn_mini.setText("-")
@@ -491,7 +491,7 @@ class LoginWindow(QMainWindow):
         """)
         self.btn_fch.clicked.connect(self.close)
         
-        # Barra de título personalizada
+     
         self.title_bar = QLabel("ㅤ", self)
         self.title_bar.setGeometry(100, 8, 300, 23)
         self.title_bar.setStyleSheet("""
@@ -590,7 +590,7 @@ class LoginWindow(QMainWindow):
             layout.setContentsMargins(40, 40, 40, 40)
             layout.setSpacing(20)
 
-            # Título da página
+            
             title = QLabel("📊 Relatórios")
             title.setStyleSheet("""
                 QLabel {
@@ -602,29 +602,29 @@ class LoginWindow(QMainWindow):
             """)
             layout.addWidget(title, alignment=Qt.AlignLeft)
 
-            # Cards de estatísticas financeiras
+            
             cards_layout = QHBoxLayout()
             cards_layout.setSpacing(15)
             
-            # Card 1 - Receita Bruta
+           
             cards_layout.addWidget(self.main_content.create_card("💵 Receita Bruta", "R$ 12.300,00", "#27ae60"))
             
-            # Card 2 - Despesas Totais
+           
             cards_layout.addWidget(self.main_content.create_card("💸 Despesas", "R$ 5.800,00", "#e74c3c"))
             
-            # Card 3 - Lucro Líquido
+         
             cards_layout.addWidget(self.main_content.create_card("📈 Lucro Líquido", "R$ 6.500,00", "#3498db"))
             
-            # Card 4 - Margem de Lucro
+           
             cards_layout.addWidget(self.main_content.create_card("📊 Margem de Lucro", "52.8%", "#9b59b6"))
             
             layout.addLayout(cards_layout)
 
-            # Área de gráficos e análises
+          
             content_layout = QHBoxLayout()
             content_layout.setSpacing(20)
             
-            # Gráfico de receitas vs despesas
+          
             grafico_widget = QWidget()
             grafico_widget.setStyleSheet("""
                 QWidget {
@@ -647,7 +647,7 @@ class LoginWindow(QMainWindow):
             """)
             grafico_layout.addWidget(grafico_title)
             
-            # Simulação de gráfico
+           
             grafico_content = QLabel("""
             📊 Gráfico de Barras
             
@@ -670,7 +670,7 @@ class LoginWindow(QMainWindow):
             
             content_layout.addWidget(grafico_widget, 2)
             
-            # Lista de categorias de gastos
+           
             categorias_widget = QWidget()
             categorias_widget.setStyleSheet("""
                 QWidget {
@@ -693,7 +693,7 @@ class LoginWindow(QMainWindow):
             """)
             categorias_layout.addWidget(categorias_title)
             
-            # Lista de categorias
+           
             categorias_list = QListWidget()
             categorias_list.setStyleSheet("""
                 QListWidget {
@@ -726,7 +726,7 @@ class LoginWindow(QMainWindow):
             
             layout.addLayout(content_layout)
 
-            # Informações sobre relatórios
+          
             info_label = QLabel("""
             📋 Funcionalidades dos Relatórios:
             • Gráficos interativos de receitas e despesas
@@ -752,7 +752,7 @@ class LoginWindow(QMainWindow):
 
             layout.addWidget(info_label, alignment=Qt.AlignLeft)
             
-            # Botões de ação
+            
             botoes_layout = QHBoxLayout()
             
             btn_exportar_pdf = QPushButton("📄 Exportar PDF")
@@ -895,4 +895,5 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = LoginWindow()
     window.show()
+
     sys.exit(app.exec())
