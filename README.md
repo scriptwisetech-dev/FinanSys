@@ -42,8 +42,8 @@ Estrutura do Projeto
 FinanSys/
 │
 ├── FinanSys.py          # Código principal da interface gráfica
-├── assets/              # (Opcional) Pasta para ícones, imagens e fontes
-└── README.md            # Documentação do projeto
+├── assets/              
+└── README.md            
 ```
 
 Como Executar
