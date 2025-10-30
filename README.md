@@ -1,4 +1,4 @@
-💰 FinanSys — Sistema de Controle Financeiro Pessoal
+FinanSys — Sistema de Controle Financeiro Pessoal
 
 FinanSys é um sistema de controle financeiro pessoal desenvolvido em Python com PySide6 (Qt for Python).
 Ele foi criado para ajudar usuários a gerenciar receitas, despesas e relatórios financeiros de forma visual e intuitiva.
@@ -38,24 +38,28 @@ Banco de Dados (planejado)	SQLite3
 Interface	QMainWindow, QFrame, QListWidget, QStackedWidget, QPushButton, QLabel
 Estilo	CSS aplicado via Qt StyleSheets
 Estrutura do Projeto
+```
 FinanSys/
 │
 ├── FinanSys.py          # Código principal da interface gráfica
 ├── assets/              # (Opcional) Pasta para ícones, imagens e fontes
 └── README.md            # Documentação do projeto
+```
 
 Como Executar
 
 Clone ou baixe o repositório:
-
+```
 git clone https://github.com/seuusuario/FinanSys.git
 cd FinanSys
+```
 
 
 Instale as dependências:
 
+```
 pip install PySide6
-
+```
 
 Execute o programa:
 
@@ -78,11 +82,3 @@ Próximos Passos (Planejados)
 Conceito do Projeto
 
 O FinanSys foi idealizado como uma ferramenta prática e elegante para controle financeiro pessoal, permitindo ao usuário visualizar rapidamente sua situação financeira através de painéis e relatórios visuais.
-
-Mesmo sem o backend funcional, o projeto já demonstra uma estrutura sólida de interface, modular e preparada para integração futura com banco de dados e gráficos dinâmicos.
-
-📄 Licença
-
-Este projeto é distribuído sob a licença MIT.
-Sinta-se livre para modificar e utilizar o FinanSys como base para seus próprios projetos.
-
